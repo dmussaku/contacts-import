@@ -23,6 +23,26 @@ class ContactInfo(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return "{} {}".format(self._type, self.contact.id)
+
+    def __repr__(self):
+        """
+        long text
+        foo:
+        bar
+
+
+        changing lines to trigger
+        meargeable error
+
+        max 10 lines
+
+        right
+        """
+        return "{} {}".format(self._type, self.contact.id)
+
+
 
 class Email(ContactInfo):
     value = models.EmailField(max_length=70)
